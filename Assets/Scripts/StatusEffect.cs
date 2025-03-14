@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class StatusEffect
+public enum StatusEffect
 {
-    
+    NORMAL,
+    TICK,
+    SLOW
 }
