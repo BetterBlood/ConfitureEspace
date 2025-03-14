@@ -25,6 +25,9 @@ public class FightingEntity : ScriptableObject
     [Header("Can hit damage ?")]
     public bool canHitDamage;
 
+    [Header("Can take Tick Damage ?")]
+    public bool canTakeTickDamage;
+
     [Header("Fire Rate")]
     public float fireRate = 1.0;
 
@@ -42,7 +45,19 @@ public class FightingEntity : ScriptableObject
 
     private void shoot();
 
-    private void hit();
+    private void hit(float damage, StatusEffect statusEffect)
+    {
+        applyStatusEffect(statusEffect);
+        takeDamage(damage);
+    }
+
+    private void applyStatusEffect(StatusEffect statusEffect)
+    {
+        switch (statusEffect)
+        {
+            
+        }
+    }
 
     private void takeDamage(float damage)
     {
