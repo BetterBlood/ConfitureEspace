@@ -35,6 +35,7 @@ public class SlimeAlliesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO : remove timer things it's only debug test
         timer += Time.deltaTime;
 
         if (timer > 1)
@@ -50,6 +51,7 @@ public class SlimeAlliesManager : MonoBehaviour
                 else AddSlime(ally);
             }
         }
+
     }
 
     public void SpawnSlimes()

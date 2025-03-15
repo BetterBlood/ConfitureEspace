@@ -147,6 +147,7 @@ public class Projectile : MonoBehaviour
     public void setProjectileData(ProjectileData pData)
     {
         projectileData = pData;
+        // TODO : set projectile color ?
 
         Vector3 target = transform.position + projectileData.GetDirection();
         transform.LookAt(target);

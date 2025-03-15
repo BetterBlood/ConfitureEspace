@@ -231,7 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  ally: {fileID: 9196513145366444793, guid: bd1e0ed69b3678e4aa0a167c17c2bf16, type: 3}
+  ally: {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+  allyFire: {fileID: 9196513145366444793, guid: bd1e0ed69b3678e4aa0a167c17c2bf16, type: 3}
   playerInput: {fileID: 1865686892}
 --- !u!1 &78344514
 GameObject:
