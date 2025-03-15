@@ -12,8 +12,8 @@ public class FightingEntityBehaviour : MonoBehaviour
     private float power;
     private float projSpeed;
     private float projSpread;
-    private float projDuration;
-    private float projStatusDuration;
+    private uint projDuration;
+    private uint projStatusDuration;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -41,12 +41,10 @@ public class FightingEntityBehaviour : MonoBehaviour
 
     private void Shoot()
     {
-        Projectile.ProjectileData projectileData = new(power, projSpeed, projSpread, GetDirection(), projDuration, projStatusEffect, projStatusDuration, fightingEntity.GetTarget());
+        Projectile.ProjectileData projectileData = new(power, projSpeed, projSpread, GetDirection(), projDuration, fightingEntity.ProjStatusEffect, projStatusDuration, fightingEntity.GetTarget());
 
-        GameObject projectile = GameObject.Instantiate<Projectile>();
-
-        Projectile proj = gameObject.AddComponent<Projectile>();
-        proj.setProjectileData(projectileData);
+        // Projectile proj = gameObject.AddComponent<Projectile>();
+        // proj.setProjectileData(projectileData);
     }
 
     public void Hit(float damage, EnumList.StatusEffect statusEffect = EnumList.StatusEffect.NORMAL, uint statusDuration = 0)
