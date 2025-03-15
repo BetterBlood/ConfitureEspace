@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7522906055665627717}
-  - component: {fileID: 3973297703684190755}
+  - component: {fileID: 4701054451019001557}
   m_Layer: 0
   m_Name: SpriteSelectionManager
   m_TagString: Untagged
@@ -189,7 +189,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 793360866977303282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3973297703684190755
+--- !u!114 &4701054451019001557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

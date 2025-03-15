@@ -24,9 +24,9 @@ public class SlimeAlliesManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ally.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput); // TODO remove !
+        ally.GetComponentInChildren<spriteManagerSlime>().SetPlayerInput(playerInput); // TODO remove !
         ally.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
-        allyFire.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput); // TODO remove !
+        allyFire.GetComponentInChildren<spriteManagerSlime>().SetPlayerInput(playerInput); // TODO remove !
         allyFire.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
 
         SpawnSlimes();
@@ -95,7 +95,7 @@ public class SlimeAlliesManager : MonoBehaviour
 
     public void AddSlime(GameObject new_slime)
     {
-        new_slime.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput);
+        new_slime.GetComponentInChildren<spriteManagerSlime>().SetPlayerInput(playerInput);
         new_slime.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput);
 
         int alliesNumber = allies.Count;
