@@ -14,6 +14,9 @@ public class SlimeAlliesManager : MonoBehaviour
     [Tooltip("Only for debug, TODO remove !")]
     private GameObject ally;
     [SerializeField]
+    [Tooltip("Only for debug, TODO remove !")]
+    private GameObject allyFire;
+    [SerializeField]
     private PlayerInput playerInput;
     private LinkedList<GameObject> allies = new LinkedList<GameObject>();
     private float timer = 0f;
@@ -23,6 +26,9 @@ public class SlimeAlliesManager : MonoBehaviour
     {
         ally.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput); // TODO remove !
         ally.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
+        allyFire.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput); // TODO remove !
+        allyFire.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
+
         SpawnSlimes();
     }
 
@@ -36,9 +42,13 @@ public class SlimeAlliesManager : MonoBehaviour
             timer = 0;
             if (allies.Count > 7)
             {
-                //RemoveLastSlime();
+                RemoveLastSlime();
             }
-            //else AddSlime(ally);
+            else
+            {
+                if (allies.Count %2 == 0) AddSlime(allyFire);
+                else AddSlime(ally);
+            }
         }
     }
 
