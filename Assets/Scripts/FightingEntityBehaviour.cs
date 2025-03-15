@@ -2,7 +2,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class FightingEntityBehaviour : MonoBehaviour
+public abstract class FightingEntityBehaviour : MonoBehaviour
 {
 
     public FightingEntity fightingEntity;
@@ -47,10 +47,7 @@ public class FightingEntityBehaviour : MonoBehaviour
             timer = 0f;
         }
     }
-    private Vector3 GetDirection()
-    {
-        return this.gameObject.transform.rotation * Vector3.right;
-    }
+    protected abstract Vector3 GetDirection();
 
     private void Shoot()
     {

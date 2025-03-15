@@ -143,7 +143,7 @@ public class Projectile : MonoBehaviour
         //Debug.Log(transform.position);
         //}
 
-        if (isInstantiate) transform.position += transform.right * Time.deltaTime * projectileData.GetSpeed();
+        if (isInstantiate) transform.position += transform.forward * Time.deltaTime * projectileData.GetSpeed();
         else Debug.Log("Need To instantiate ProjectileData with setProjectileData");
         
     }
