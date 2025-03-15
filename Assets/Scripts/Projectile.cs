@@ -1,9 +1,5 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static Projectile;
-using static UnityEditor.PlayerSettings;
 
 
 public class Projectile : MonoBehaviour
@@ -11,21 +7,21 @@ public class Projectile : MonoBehaviour
     public class ProjectileData
     {
         [SerializeField]
-        private float power;
+        private float power = 1f;
 
         [SerializeField]
-        private float speed = 5;
+        private float speed = 5f;
 
         [SerializeField]
         [Tooltip("Between 0 and PI, 0 meaning no spread at all, PI meaning completly random fire angle")]
         [Range(0, Mathf.PI)]
-        private float maxSpread;
+        private float maxSpread = 0f;
 
         [SerializeField]
-        private Vector3 direction;
+        private Vector3 direction = new Vector3(1, 0, 0);
 
         [SerializeField]
-        private uint duration;
+        private uint duration = 5000;
 
         [SerializeField]
         private EnumList.StatusEffect statusEffect;
@@ -34,7 +30,7 @@ public class Projectile : MonoBehaviour
         private uint effectDuration;
 
         [SerializeField]
-        private string targetTag;
+        private string targetTag = "Enemy";
 
         public ProjectileData(float p, float s, float maxS, Vector3 dirr, uint dur, EnumList.StatusEffect sE, uint eD, string tT)
         {
@@ -107,7 +103,7 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(projectileData.GetDuration() / 1000f);
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -143,7 +139,7 @@ public class Projectile : MonoBehaviour
         //Debug.Log(transform.position);
         //}
 
-        if (isInstantiate) transform.position += transform.right * Time.deltaTime * projectileData.GetSpeed();
+        if (isInstantiate) transform.position += transform.forward * Time.deltaTime * projectileData.GetSpeed();
         else Debug.Log("Need To instantiate ProjectileData with setProjectileData");
         
     }
@@ -151,6 +147,7 @@ public class Projectile : MonoBehaviour
     public void setProjectileData(ProjectileData pData)
     {
         projectileData = pData;
+        // TODO : set projectile color ?
 
         Vector3 target = transform.position + projectileData.GetDirection();
         transform.LookAt(target);

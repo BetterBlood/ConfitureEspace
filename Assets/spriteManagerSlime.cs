@@ -34,4 +34,9 @@ public class spriteManagerSlime : MonoBehaviour
         }
 
     }
+
+    public void SetPlayerInput(PlayerInput pI)
+    {
+        playerInput = pI;
+    }
 }
