@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -5,6 +6,10 @@ public class FightingEntityBehaviour : MonoBehaviour
 {
 
     public FightingEntity fightingEntity;
+
+    [SerializeField]
+    private GameObject projectile;
+
 
     private float hp;
     private float speed;
@@ -14,6 +19,8 @@ public class FightingEntityBehaviour : MonoBehaviour
     private float projSpread;
     private uint projDuration;
     private uint projStatusDuration;
+
+    private float timer = 0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -32,7 +39,13 @@ public class FightingEntityBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer > 3f)
+        {
+            Shoot();
+            timer = 0f;
+        }
     }
     private Vector3 GetDirection()
     {
@@ -43,8 +56,9 @@ public class FightingEntityBehaviour : MonoBehaviour
     {
         Projectile.ProjectileData projectileData = new(power, projSpeed, projSpread, GetDirection(), projDuration, fightingEntity.ProjStatusEffect, projStatusDuration, fightingEntity.GetTarget());
 
-        // Projectile proj = gameObject.AddComponent<Projectile>();
-        // proj.setProjectileData(projectileData);
+        GameObject proj = Instantiate(projectile, this.transform);
+        proj.transform.parent = null;
+        proj.GetComponent<Projectile>().setProjectileData(projectileData);
     }
 
     public void Hit(float damage, EnumList.StatusEffect statusEffect = EnumList.StatusEffect.NORMAL, uint statusDuration = 0)

@@ -41,7 +41,7 @@ public class FightingEntity : ScriptableObject
     public float ProjSpread { get; set; } = 0f;
 
     [Header("Bullet Duration (ms)")]
-    public uint ProjDuration { get; set; } = 0;
+    public uint ProjDuration { get; set; } = 5000;
 
     [Header("Bullet Status Effect")]
     public EnumList.StatusEffect ProjStatusEffect { get; set; } = EnumList.StatusEffect.NORMAL;

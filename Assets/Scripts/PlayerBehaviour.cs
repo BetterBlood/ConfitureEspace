@@ -9,12 +9,6 @@ public class PlayerBehaviour : FightingEntityBehaviour
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     protected override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);

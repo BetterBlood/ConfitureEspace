@@ -107,7 +107,7 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(projectileData.GetDuration() / 1000f);
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
