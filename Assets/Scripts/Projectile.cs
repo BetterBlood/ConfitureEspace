@@ -11,21 +11,21 @@ public class Projectile : MonoBehaviour
     public class ProjectileData
     {
         [SerializeField]
-        private float power = 1;
+        private float power = 1f;
 
         [SerializeField]
-        private float speed = 5;
+        private float speed = 5f;
 
         [SerializeField]
         [Tooltip("Between 0 and PI, 0 meaning no spread at all, PI meaning completly random fire angle")]
         [Range(0, Mathf.PI)]
-        private float maxSpread = 0;
+        private float maxSpread = 0f;
 
         [SerializeField]
         private Vector3 direction = new Vector3(1, 0, 0);
 
         [SerializeField]
-        private uint duration;
+        private uint duration = 5000;
 
         [SerializeField]
         private EnumList.StatusEffect statusEffect;
@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         private uint effectDuration;
 
         [SerializeField]
-        private string targetTag;
+        private string targetTag = "Enemy";
 
         public ProjectileData(float p, float s, float maxS, Vector3 dirr, uint dur, EnumList.StatusEffect sE, uint eD, string tT)
         {
