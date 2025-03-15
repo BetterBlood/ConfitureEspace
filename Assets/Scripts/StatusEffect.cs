@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public enum StatusEffect
+public class EnumList : ScriptableObject
 {
-    NORMAL,
-    TICK,
-    SLOW
+    public enum StatusEffect
+    {
+        NORMAL,
+        TICK,
+        SLOW
+    }
 }
