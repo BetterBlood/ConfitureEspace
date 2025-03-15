@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class spriteManager : MonoBehaviour
+public class spriteManagerWolf : MonoBehaviour
 {
     //[SerializeField] private GameObject spriteIdle;
     //[SerializeField] private GameObject spriteMoving;
@@ -26,11 +26,11 @@ public class spriteManager : MonoBehaviour
         if (moveInput.ReadValue<Vector2>() != Vector2.zero)
         {
             //spriteIdle.SetActive(false);
-            spriteMovingAnimator.SetBool("isWalking", true);
+            spriteMovingAnimator.SetBool("isAttacking", true);
         }
         else
         {
-            spriteMovingAnimator.SetBool("isWalking", false);
+            spriteMovingAnimator.SetBool("isAttacking", false);
         }
 
     }

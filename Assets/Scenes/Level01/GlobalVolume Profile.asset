@@ -134,13 +134,13 @@ MonoBehaviour:
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 10.15
+    m_Value: 10.72
   aperture:
     m_OverrideState: 1
-    m_Value: 7.7
+    m_Value: 2.6
   focalLength:
     m_OverrideState: 1
-    m_Value: 245.75
+    m_Value: 160
   bladeCount:
     m_OverrideState: 1
     m_Value: 4
@@ -183,8 +183,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.2228261
-          value: 0.31698114
+          time: 0.21014492
+          value: 0.30943394
           inSlope: 1.0039115
           outSlope: 1.0039115
           tangentMode: 0
