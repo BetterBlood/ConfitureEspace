@@ -1,57 +1,51 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FightingEntity", menuName = "Scriptable Objects/FightingEntity")]
+[CreateAssetMenu(fileName = "FightingEntity", menuName = "Scriptable Objects/EntityData/FightingEntity")]
+[System.Serializable]
 public class FightingEntity : ScriptableObject
 {
-    [Header("Entity Name")]
-    public string EntityName { get; set; }
+    [SerializeField]
+    public string EntityName;
 
-    [Header("HP")]
-    public float Hp { get; set; }
+    [SerializeField]
+    public float Hp;
 
-    [Header("Size Scale")]
-    public float SizeScale { get; set; } = 1f;
+    [SerializeField]
+    public float SizeScale = 1f;
 
-    [Header("Movement Speed")]
-    public float Speed { get; set; } = 1f;
+    [SerializeField]
+    public float Speed = 1f;
 
-    [Header("Unvulnerability Duration (ms)")]
-    public uint UnvulnerabilityDuration { get; set; } = 0;
+    [SerializeField]
+    public uint UnvulnerabilityDuration = 0;
 
-    [Header("Can Shoot Bullets ?")]
-    public bool CanShoot { get; set; } = false;
+    [SerializeField]
+    public bool CanShoot = false;
 
-    [Header("Can hit damage ?")]
-    public bool CanHitDamage { get; set; } = false;
+    [SerializeField]
+    public bool CanHitDamage = false;
 
-    [Header("Can take Tick Damage ?")]
-    public bool CanTakeTickDamage { get; set; } = false;
+    [SerializeField]
+    public bool CanTakeTickDamage = false;
 
-    [Header("Fire Rate")]
-    public float FireRate { get; set; } = 0.5f;
+    [SerializeField]
+    public bool CanBeSlowed = false;
 
-    [Header("Power")]
-    public float Power { get; set; } = 1f;
+    [SerializeField]
+    public bool HasTickEffect = false;
 
-    [Header("Bullet Speed")]
-    public float ProjSpeed { get; set; } = 4f;
+    [SerializeField]
+    public bool HasSlownessEffect = false;
 
-    [Header("Bullet Spread")]
-    public float ProjSpread { get; set; } = 0f;
+    [SerializeField]
+    public float FireRate = 0.5f;
 
-    [Header("Bullet Duration (ms)")]
-    public uint ProjDuration { get; set; } = 5000;
+    [SerializeField]
+    public float Power = 1f;
 
-    [Header("Bullet Status Effect")]
-    public EnumList.StatusEffect ProjStatusEffect { get; set; } = EnumList.StatusEffect.NORMAL;
-
-    [Header("Bullet Status Duration (ms)")]
-    public uint ProjStatusDuration { get; set; } = 0;
-
-    public FightingEntity()
-    {
-    }
+    [SerializeField]
+    public float TickDamageMultiplier = 0.1f;
 
     virtual public string GetTarget()
     {

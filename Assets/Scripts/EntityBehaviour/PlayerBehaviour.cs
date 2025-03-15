@@ -13,7 +13,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
         base.Start();
     }
 
-    protected override Vector3 GetDirection()
+    public override Vector3 GetDirection()
     {
         return direction.transform.forward;
     }
