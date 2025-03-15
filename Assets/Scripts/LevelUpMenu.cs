@@ -32,9 +32,9 @@ public class LevelUpMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
         levelUpMenuUI.SetActive(true);
-        ButtonChoice(); // ICI BRYAN ET JEREMIAH
-        levelUpMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        //ButtonChoice(); // ICI BRYAN ET JEREMIAH
+        //levelUpMenuUI.SetActive(false);
+        //Time.timeScale = 1f;
 
     }
 
