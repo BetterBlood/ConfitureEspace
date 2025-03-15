@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SlimeAlliesManager : MonoBehaviour
 {
@@ -10,12 +12,16 @@ public class SlimeAlliesManager : MonoBehaviour
     private float radius = 3f;
     [SerializeField]
     private GameObject ally;
-    private LinkedList<GameObject> allies = new LinkedList<GameObject> ();
+    [SerializeField]
+    private PlayerInput playerInput;
+    private LinkedList<GameObject> allies = new LinkedList<GameObject>();
     private float timer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ally.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput);
+        ally.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput);
         SpawnSlimes();
     }
 
@@ -76,6 +82,9 @@ public class SlimeAlliesManager : MonoBehaviour
 
     public void AddSlime(GameObject new_slime)
     {
+        new_slime.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput);
+        new_slime.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput);
+
         int alliesNumber = allies.Count;
         ReComputeSlimesPositions(alliesNumber + 1);
 

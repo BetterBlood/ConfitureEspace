@@ -31,4 +31,9 @@ public class playerController : MonoBehaviour
         }
         
     }
+
+    public PlayerInput GetPlayerInput()
+    {
+        return playerInput;
+    }
 }

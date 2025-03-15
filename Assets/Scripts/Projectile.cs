@@ -1,9 +1,5 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static Projectile;
-using static UnityEditor.PlayerSettings;
 
 
 public class Projectile : MonoBehaviour
