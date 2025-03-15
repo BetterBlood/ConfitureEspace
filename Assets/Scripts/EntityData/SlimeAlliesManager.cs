@@ -11,6 +11,7 @@ public class SlimeAlliesManager : MonoBehaviour
     [SerializeField]
     private float radius = 3f;
     [SerializeField]
+    [Tooltip("Only for debug, TODO remove !")]
     private GameObject ally;
     [SerializeField]
     private PlayerInput playerInput;
@@ -20,8 +21,8 @@ public class SlimeAlliesManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ally.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput);
-        ally.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput);
+        ally.GetComponentInChildren<spriteManager>().SetPlayerInput(playerInput); // TODO remove !
+        ally.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
         SpawnSlimes();
     }
 
