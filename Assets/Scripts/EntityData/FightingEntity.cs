@@ -29,13 +29,13 @@ public class FightingEntity : ScriptableObject
     public bool CanTakeTickDamage { get; set; } = false;
 
     [Header("Fire Rate")]
-    public float FireRate { get; set; } = 1f;
+    public float FireRate { get; set; } = 0.5f;
 
     [Header("Power")]
     public float Power { get; set; } = 1f;
 
     [Header("Bullet Speed")]
-    public float ProjSpeed { get; set; } = 1f;
+    public float ProjSpeed { get; set; } = 4f;
 
     [Header("Bullet Spread")]
     public float ProjSpread { get; set; } = 0f;

@@ -41,7 +41,7 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 3f)
+        if (timer > fireRate)
         {
             Shoot();
             timer = 0f;
