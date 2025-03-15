@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     public class ProjectileData
     {
         [SerializeField]
-        private float power;
+        private float power = 1;
 
         [SerializeField]
         private float speed = 5;
@@ -19,10 +19,10 @@ public class Projectile : MonoBehaviour
         [SerializeField]
         [Tooltip("Between 0 and PI, 0 meaning no spread at all, PI meaning completly random fire angle")]
         [Range(0, Mathf.PI)]
-        private float maxSpread;
+        private float maxSpread = 0;
 
         [SerializeField]
-        private Vector3 direction;
+        private Vector3 direction = new Vector3(1, 0, 0);
 
         [SerializeField]
         private uint duration;

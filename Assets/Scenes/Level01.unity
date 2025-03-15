@@ -232,10 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  allies:
-  - {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
-  - {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
-  - {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+  ally: {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
 --- !u!1 &78344514
 GameObject:
   m_ObjectHideFlags: 0
