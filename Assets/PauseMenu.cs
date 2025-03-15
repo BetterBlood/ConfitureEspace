@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameisPaused) {
-                Resume(); 
+                Resume();
             }
             else
             {
@@ -23,7 +24,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-     public void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
@@ -33,17 +34,14 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;  
+        Time.timeScale = 0f;
         GameisPaused = true;
     }
 
     public void LoadMenu()
     {
         Debug.Log("Loading menu...");
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quitting game...")
+        SceneManager.LoadScene("Main Menu");
+        GameisPaused = false;
     }
 }
