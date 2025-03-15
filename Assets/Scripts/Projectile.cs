@@ -93,14 +93,14 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private ProjectileData projectileData;
 
-    private bool is_instantiate = false;
+    private bool isInstantiate = false;
 
-    private Camera cam;
+    //private Camera cam;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cam = Camera.main;
+        //cam = Camera.main;
     }
 
     private IEnumerator ManageDuration()
@@ -113,43 +113,54 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!is_instantiate)
-        {
-            is_instantiate = true;
+        //if (!is_instantiate)
+        //{
+        // get mouse position TODO : remove after getting direction from caller
+        //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+        //Vector3 dest = ray.origin + ray.direction;
 
-            // get mouse position TODO : remove after getting direction from caller
-            //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-            //Vector3 dest = ray.origin + ray.direction;
-
-            // compute direction with spread
-            //projectileData.direction = new Vector3(dest.x-transform.position.x, 0,  dest.z-transform.position.z).normalized; // TODO : remove after getting direction from caller
-            //Debug.Log(projectileData.GetDirection());
-            Vector3 target = transform.position + projectileData.GetDirection();
-            transform.LookAt(target);
+        // compute direction with spread
+        //projectileData.direction = new Vector3(dest.x-transform.position.x, 0,  dest.z-transform.position.z).normalized; // TODO : remove after getting direction from caller
+        //Debug.Log(projectileData.GetDirection());
+        //Vector3 target = transform.position + projectileData.GetDirection();
+        //transform.LookAt(target);
 
 
-            // spread
-            float randomSpread = Random.Range(-projectileData.GetMaxSpread(), projectileData.GetMaxSpread());
-            transform.Rotate(Vector3.up, randomSpread);
-            StartCoroutine(ManageDuration());
-        }
-        else
-        {
-            //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-            //Vector3 dest = ray.origin + ray.direction;
+        //// spread
+        //float randomSpread = Random.Range(-projectileData.GetMaxSpread(), projectileData.GetMaxSpread());
+        //transform.Rotate(Vector3.up, randomSpread);
+        //}
+        //else
+        //{
+        //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+        //Vector3 dest = ray.origin + ray.direction;
 
-            //direction = new Vector3(dest.x - transform.position.x, 0, dest.z - transform.position.z).normalized;
-            //Debug.Log(direction);
-            transform.position += transform.right * Time.deltaTime * projectileData.GetSpeed();
-            //Debug.Log(transform.position);
-        }
+        //direction = new Vector3(dest.x - transform.position.x, 0, dest.z - transform.position.z).normalized;
+        //Debug.Log(direction);
+        //transform.position += transform.right * Time.deltaTime * projectileData.GetSpeed();
+        //Debug.Log(transform.position);
+        //}
+
+        if (isInstantiate) transform.position += transform.right * Time.deltaTime * projectileData.GetSpeed();
+        else Debug.Log("Need To instantiate ProjectileData with setProjectileData");
+        
     }
 
     public void setProjectileData(ProjectileData pData)
     {
         projectileData = pData;
+
+        Vector3 target = transform.position + projectileData.GetDirection();
+        transform.LookAt(target);
+
+        float randomSpread = Random.Range(-projectileData.GetMaxSpread(), projectileData.GetMaxSpread());
+        transform.Rotate(Vector3.up, randomSpread);
+
+        isInstantiate = true;
+
+        StartCoroutine(ManageDuration());
     }
 
     public void OnCollisionEnter(Collision collision)
