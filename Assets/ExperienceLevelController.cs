@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ExperienceLevelController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ExperienceLevelController : MonoBehaviour
     {
       instance = this;
     }
+
     public int currentExperience;
 
     public ExpPickup pickup;
@@ -53,9 +55,11 @@ public class ExperienceLevelController : MonoBehaviour
     private void LevelUp()
     {
         currentExperience -= expLevels[currentLevel];
-
         currentLevel++;
-        if(currentLevel >= expLevels.Count)
+
+        LevelUpMenu.instance.BonusChoiceMenu();
+
+        if (currentLevel >= expLevels.Count)
         {
             currentLevel = expLevels.Count - 1;
         }
