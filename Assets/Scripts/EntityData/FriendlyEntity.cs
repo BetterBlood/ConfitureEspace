@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FriendlyEntity", menuName = "Scriptable Objects/FriendlyEntity")]
+[CreateAssetMenu(fileName = "FriendlyEntity", menuName = "Scriptable Objects/EntityData/FriendlyEntity")]
 public class FriendlyEntity : FightingEntity
 {
     public FriendlyEntity()

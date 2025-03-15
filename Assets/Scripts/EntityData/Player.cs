@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Player", menuName = "Scriptable Objects/Player")]
+[CreateAssetMenu(fileName = "Player", menuName = "Scriptable Objects/EntityData/Player")]
 public class Player : FriendlyEntity
 {
     public Player()

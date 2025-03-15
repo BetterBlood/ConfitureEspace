@@ -11,82 +11,44 @@ public class Projectile : MonoBehaviour
     public class ProjectileData
     {
         [SerializeField]
-        private float power = 1f;
+        public float power = 1f;
 
         [SerializeField]
-        private float speed = 5f;
+        public BulletBehaviour bulletBehaviour;
 
         [SerializeField]
-        [Tooltip("Between 0 and PI, 0 meaning no spread at all, PI meaning completly random fire angle")]
-        [Range(0, Mathf.PI)]
-        private float maxSpread = 0f;
+        public Vector3 direction = new Vector3(1, 0, 0);
 
         [SerializeField]
-        private Vector3 direction = new Vector3(1, 0, 0);
+        public string targetTag = "Enemy";
 
-        [SerializeField]
-        private uint duration = 5000;
-
-        [SerializeField]
-        private EnumList.StatusEffect statusEffect;
-
-        [SerializeField]
-        private uint effectDuration;
-
-        [SerializeField]
-        private string targetTag = "Enemy";
-
-        public ProjectileData(float p, float s, float maxS, Vector3 dirr, uint dur, EnumList.StatusEffect sE, uint eD, string tT)
+        public ProjectileData(float p, BulletBehaviour bB, Vector3 dirr, string tT)
         {
             power = p;
-            speed = s;
-            maxSpread = maxS;
+            bulletBehaviour = bB;
             direction = dirr;
-            duration = dur;
-            statusEffect = sE;
-            effectDuration = eD;
             targetTag = tT;
         }
 
-        public Vector3 GetDirection()
-        {
-            return direction;
-        }
+        public Vector3 GetDirection() => direction;
 
-        public float GetPower()
-        {
-            return power;
-        }
+        public float GetPower() => power;
 
-        public float GetSpeed()
-        {
-            return speed;
-        }
+        public float GetSpeed() => bulletBehaviour.Speed;
 
-        public float GetMaxSpread()
-        {
-            return maxSpread;
-        }
+        public float GetMaxSpread() => bulletBehaviour.Spread;
 
-        public float GetDuration()
-        {
-            return duration;
-        }
+        public float GetDuration() => bulletBehaviour.Duration;
 
-        public EnumList.StatusEffect GetEffect()
-        {
-            return statusEffect;
-        }
+        public EnumList.StatusEffect GetEffect() => bulletBehaviour.StatusEffect;
 
-        public uint GetEffectDuration()
-        {
-            return effectDuration;
-        }
+        public uint GetEffectDuration() => bulletBehaviour.StatusDuration;
 
-        public string GetTag()
-        {
-            return targetTag;
-        }
+        public uint GetStatusTickDelay() => bulletBehaviour.StatusTickDelay;
+
+        public float GetEntitySpeedMultiplier() => bulletBehaviour.EntitySpeedMultiplier;
+
+        public string GetTag() => targetTag;
 
     }
 

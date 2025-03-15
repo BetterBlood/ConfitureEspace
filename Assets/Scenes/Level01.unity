@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 18091768}
   - component: {fileID: 18091771}
   - component: {fileID: 18091772}
+  - component: {fileID: 18091773}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -232,7 +233,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  ally: {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+  ally: {fileID: 0}
+--- !u!114 &18091773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18091766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e355fce08246b42a1557e407cec2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fightingEntity: {fileID: 11400000, guid: a437a0bf877921948886f3875c8911c8, type: 2}
+  bullet: {fileID: 0}
+  bulletBehaviour: {fileID: 0}
+  projectile: {fileID: 7316956318293850088, guid: e414544efb5650442bb8d37746cc585c, type: 3}
+  hp: 0
+  speed: 0
+  fireRate: 0
+  power: 0
+  canShoot: 0
+  hasTickEffect: 0
+  hasSlownessEffect: 0
+  isShooting: 0
+  tickDamageValue: 0
+  tickPenaltyTimeLeft: 0
+  timeBetweenTickDamages: 0
+  timeUntilNextTickDamage: 0
+  slowPenaltyTimeLeft: 0
+  speedMultiplier: 1
+  shootTimer: 0
+  direction: {fileID: 1804235462}
 --- !u!1 &78344514
 GameObject:
   m_ObjectHideFlags: 0
