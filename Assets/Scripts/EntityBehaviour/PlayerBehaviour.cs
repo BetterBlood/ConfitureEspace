@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Projectile;
 
 public class PlayerBehaviour : FightingEntityBehaviour
@@ -43,6 +44,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     {
         base.Die();
         // GAME OVER
+        SceneManager.LoadScene("Gamo Vert");
     }
 
     public void OnTriggerEnter(Collider collider)
