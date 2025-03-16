@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Projectile;
@@ -15,6 +16,10 @@ public class EnemyBehaviour : FightingEntityBehaviour
     protected override void Start()
     {
         base.Start();
+        if(player == null)
+        {
+            player = FindObjectsByType<GameObject>(FindObjectsSortMode.None).ToList().Find(o => o.name == "PlayerContainer");
+        }
     }
 
     // Update is called once per frame

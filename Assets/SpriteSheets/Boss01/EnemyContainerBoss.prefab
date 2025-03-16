@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 874949006386836838}
   - component: {fileID: 7096377556317347870}
   - component: {fileID: 2583271200432189920}
+  - component: {fileID: -2719750454804475888}
   m_Layer: 0
   m_Name: EnemyContainerBoss
   m_TagString: Untagged
@@ -82,6 +83,41 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2719750454804475888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208956899060905246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9849ecc1f2344f4aac349af7861bfad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fightingEntity: {fileID: 11400000, guid: 990621cf0c420b648ae90f57880dc09d, type: 2}
+  bullet: {fileID: 11400000, guid: ab509276d77a46b46944a0d68db606aa, type: 2}
+  bulletBehaviour: {fileID: 0}
+  projectile: {fileID: 7316956318293850088, guid: 312b41fdbe682544984d80c49af8c918, type: 3}
+  hp: 0
+  speed: 0
+  fireRate: 0
+  power: 0
+  canShoot: 0
+  hasTickEffect: 0
+  hasSlownessEffect: 0
+  isShooting: 0
+  isAttacking: 0
+  isUnvulnerable: 0
+  tickDamageValue: 0
+  tickPenaltyTimeLeft: 0
+  timeBetweenTickDamages: 0
+  timeUntilNextTickDamage: 0
+  slowPenaltyTimeLeft: 0
+  speedMultiplier: 1
+  shootTimer: 0
+  player: {fileID: 0}
+  expPrefab: {fileID: 2025797122199939551, guid: 289899b2dbd8629469abe197301835de, type: 3}
 --- !u!1 &2094729983838636571
 GameObject:
   m_ObjectHideFlags: 0
