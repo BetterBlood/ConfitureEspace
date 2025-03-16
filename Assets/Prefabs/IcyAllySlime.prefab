@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 251392786802643043, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
       propertyPath: m_Name
-      value: AllySlime
+      value: IcyAllySlime
       objectReference: {fileID: 0}
+    - target: {fileID: 335634870213356853, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7316956318293850088, guid: 5051099adad1e4348bc50bc18a7840a2, type: 3}
     - target: {fileID: 793360866977303282, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
