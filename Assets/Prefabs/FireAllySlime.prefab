@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireAllySlime
       objectReference: {fileID: 0}
+    - target: {fileID: 335634870213356853, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7316956318293850088, guid: 750d4f9312ede7f4fa2667044b482acb, type: 3}
     - target: {fileID: 793360866977303282, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b15cba69e7ed045dfac5fa3f4e2af081, type: 2}
+    - target: {fileID: 4701054451019001557, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7548129963968721041, guid: bceff5e0d375f794c9f10c6923d1c075, type: 3}
       propertyPath: m_Size.x
       value: 15.014663
