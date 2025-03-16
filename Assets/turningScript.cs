@@ -39,4 +39,9 @@ public class turningScript : MonoBehaviour
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime * (rotationGoal - currentRotation));
         currentRotation = transform.eulerAngles.y;
     }
+    public void SetPlayerInput(PlayerInput pI)
+    {
+        playerInput = pI;
+    }
+
 }
