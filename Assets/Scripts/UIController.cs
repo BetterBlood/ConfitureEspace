@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     public Slider explvlSlider;
     public TMP_Text expLvlText;
     public TMP_Text currLvl;
+    public TMP_Text life;
 
     
 
@@ -28,6 +29,11 @@ public class UIController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateLife(int newVal)
+    {
+        life.text = "Life : " + newVal;
     }
 
     public void UpdateExperience(int currentExp, int levelExp, int currentLevel)

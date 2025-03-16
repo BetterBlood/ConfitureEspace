@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Projectile;
 
 public class PlayerBehaviour : FightingEntityBehaviour
@@ -12,6 +13,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     protected override void Start()
     {
         base.Start();
+        UIController.instance.UpdateLife((int)hp);
     }
 
     public override Vector3 GetDirection()
@@ -22,6 +24,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     protected override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        UIController.instance.UpdateLife((int) hp);
 
         if (!IsAlive()) return;
 
@@ -41,6 +44,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     {
         base.Die();
         // GAME OVER
+        SceneManager.LoadScene("Gamo Vert");
     }
 
     public void OnTriggerEnter(Collider collider)
