@@ -23,6 +23,7 @@ public class CrossfadeUI : MonoBehaviour
 
     private void Update()
     {
+
         if(Input.GetMouseButtonDown(0))
         {
             if (index == slides.Length - 1)
@@ -31,7 +32,12 @@ public class CrossfadeUI : MonoBehaviour
                 //Debug.Log("switch scene");
             }
             LeanTween.moveX(slides[index], targetOff, duration/2).setEase(LeanTweenType.linear);
-            LeanTween.moveX(slides[index+1], targetOn, duration).setEase(LeanTweenType.linear);
+            if (index < slides.Length - 1)
+            {
+                
+                LeanTween.moveX(slides[index+1], targetOn, duration).setEase(LeanTweenType.linear);
+            }
+            
             index++;
         }
     }
