@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -122,13 +123,11 @@ public class Projectile : MonoBehaviour
         StartCoroutine(ManageDuration());
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (collision != null && collision.transform.CompareTag(projectileData.GetTag()))
+        if (collider != null && collider.transform.CompareTag(projectileData.GetTag()))
         {
-            // TODO : call hit on collider GameObject
-            //collision.transform.gameObject.GetComponent("entityLogic").Hit(projectileData.GetPower(), projectileData.GetEffect(), projectileData.GetEffectDuration();
-            Debug.Log("TODO : call Hit !!");
+            collider.transform.gameObject.GetComponent<FightingEntityBehaviour>().Hit(projectileData.GetPower(), projectileData.bulletBehaviour);
         }
     }
 

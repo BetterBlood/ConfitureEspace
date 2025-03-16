@@ -44,7 +44,8 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
         this.hasTickEffect = fightingEntity.HasTickEffect;
         this.hasSlownessEffect = fightingEntity.HasSlownessEffect;
         this.bulletBehaviour = gameObject.AddComponent<BulletBehaviour>();
-        this.bulletBehaviour.SetData(bullet);
+
+        if (bullet != null ) this.bulletBehaviour.SetData(bullet);
 
     }
 
