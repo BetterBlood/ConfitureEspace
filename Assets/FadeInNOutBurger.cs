@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DigitalRuby.Tween;
 using System;
+using System.Linq;
 
 
 
@@ -24,7 +25,7 @@ public class CrossfadeUI : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if (index == 2)
+            if (index == slides.Length - 1)
             {
                 SceneManager.LoadScene("Level01");
                 //Debug.Log("switch scene");
