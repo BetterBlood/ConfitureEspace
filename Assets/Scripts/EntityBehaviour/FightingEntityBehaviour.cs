@@ -98,7 +98,7 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
     {
         if (!fightingEntity.CanTakeTickDamage) return;
 
-        uint deltaTimeMS = (uint) Math.Ceiling(Time.deltaTime*1000);  // Pas idéal mais mieux que de perdre un damage tick à cause de ce qu'on perd après la virgule
+        uint deltaTimeMS = (uint) Math.Ceiling(Time.deltaTime*1000);  // Pas idï¿½al mais mieux que de perdre un damage tick ï¿½ cause de ce qu'on perd aprï¿½s la virgule
 
         if (deltaTimeMS > tickPenaltyTimeLeft)
         {
@@ -188,7 +188,7 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
 
     public void Hit(float damage, BulletBehaviour bulletData = null)
     {
-        Debug.Log(damage + " - " + isUnvulnerable);
+        //Debug.Log(damage + " - " + isUnvulnerable);
         if (isUnvulnerable) return;
         Debug.Log(damage + " - " + isUnvulnerable);
 

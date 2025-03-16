@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1358c03b8c155174e94b66f9ac1bcfc1, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  EntityName: BOSS
+  Hp: 50
+  SizeScale: 1
+  Speed: 3
+  UnvulnerabilityDuration: 0
+  CanShoot: 1
+  CanHitDamage: 1
+  CanTakeTickDamage: 1
+  CanBeSlowed: 1
+  HasTickEffect: 0
+  HasSlownessEffect: 0
+  FireRate: 1
+  Power: 1
+  TickDamageMultiplier: 0.1

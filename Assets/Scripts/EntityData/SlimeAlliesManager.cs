@@ -29,28 +29,28 @@ public class SlimeAlliesManager : MonoBehaviour
         allyFire.GetComponentInChildren<spriteManagerSlime>().SetPlayerInput(playerInput); // TODO remove !
         allyFire.GetComponentInChildren<turningScript>().SetPlayerInput(playerInput); // TODO remove !
 
-        SpawnSlimes();
+        //SpawnSlimes();
     }
 
     // Update is called once per frame
     void Update()
     {
         // TODO : remove timer things it's only debug test
-        timer += Time.deltaTime;
+        //timer += Time.deltaTime;
 
-        if (timer > 1)
-        {
-            timer = 0;
-            if (allies.Count > 7)
-            {
-                RemoveLastSlime();
-            }
-            else
-            {
-                if (allies.Count %2 == 0) AddSlime(allyFire);
-                else AddSlime(ally);
-            }
-        }
+        //if (timer > 1)
+        //{
+        //    timer = 0;
+        //    if (allies.Count > 7)
+        //    {
+        //        RemoveLastSlime();
+        //    }
+        //    else
+        //    {
+        //        if (allies.Count %2 == 0) AddSlime(allyFire);
+        //        else AddSlime(ally);
+        //    }
+        //}
 
     }
 
@@ -77,19 +77,20 @@ public class SlimeAlliesManager : MonoBehaviour
     {
         int alliesNumber = allies.Count;
 
-        if (alliesNumber <= 0) return;
-
-        float incr = 2 * MathF.PI / (size);
-
-        for (int i = 0; i < alliesNumber; i++)
+        if (alliesNumber > 0)
         {
-            Vector3 point;
+            float incr = 2 * MathF.PI / (size);
 
-            point.x = transform.position.x + radius * Mathf.Cos(i * incr);
-            point.y = transform.position.y;
-            point.z = transform.position.z + radius * Mathf.Sin(i * incr);
+            for (int i = 0; i < alliesNumber; i++)
+            {
+                Vector3 point;
 
-            allies.ElementAt(i).transform.SetPositionAndRotation(point, transform.rotation);
+                point.x = transform.position.x + radius * Mathf.Cos(i * incr);
+                point.y = transform.position.y;
+                point.z = transform.position.z + radius * Mathf.Sin(i * incr);
+
+                allies.ElementAt(i).transform.SetPositionAndRotation(point, transform.rotation);
+            }
         }
     }
 

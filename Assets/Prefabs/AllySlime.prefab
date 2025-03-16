@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793360866977303282}
+  - component: {fileID: 335634870213356853}
   m_Layer: 0
   m_Name: AllySlime
   m_TagString: Untagged
@@ -33,6 +34,40 @@ Transform:
   - {fileID: 7522906055665627717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335634870213356853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251392786802643043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08280add269ce3844a6e86e62b1142c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fightingEntity: {fileID: 11400000, guid: 019bf6373bd32ca45abfa01fd8edb5c7, type: 2}
+  bullet: {fileID: 11400000, guid: ab509276d77a46b46944a0d68db606aa, type: 2}
+  bulletBehaviour: {fileID: 0}
+  projectile: {fileID: 7316956318293850088, guid: e414544efb5650442bb8d37746cc585c, type: 3}
+  hp: 0
+  speed: 0
+  fireRate: 0
+  power: 0
+  canShoot: 0
+  hasTickEffect: 0
+  hasSlownessEffect: 0
+  isShooting: 0
+  isAttacking: 0
+  isUnvulnerable: 0
+  tickDamageValue: 0
+  tickPenaltyTimeLeft: 0
+  timeBetweenTickDamages: 0
+  timeUntilNextTickDamage: 0
+  slowPenaltyTimeLeft: 0
+  speedMultiplier: 1
+  shootTimer: 0
+  direction: {fileID: 0}
 --- !u!1 &1162769673920620291
 GameObject:
   m_ObjectHideFlags: 0
