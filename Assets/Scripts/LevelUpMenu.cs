@@ -67,7 +67,6 @@ public class LevelUpMenu : MonoBehaviour
         button1.GetComponentInChildren<TMP_Text>().text = choices_string[choices[0]];
         button2.GetComponentInChildren<TMP_Text>().text = choices_string[choices[1]];
         button3.GetComponentInChildren<TMP_Text>().text = choices_string[choices[2]];
-
     }
 
     public void ButtonChoice1()
