@@ -169,6 +169,7 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
 
     virtual protected void TakeDamage(float damage)
     {
+        Debug.Log("DAMAGE OMG");
         if (this.hp - damage <= 0)
             Die();
         else

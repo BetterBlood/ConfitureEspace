@@ -125,9 +125,10 @@ public class Projectile : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider != null && collider.transform.CompareTag(projectileData.GetTag()))
+        if (collider != null && collider.gameObject.CompareTag(projectileData.GetTag()))
         {
             collider.transform.gameObject.GetComponent<FightingEntityBehaviour>().Hit(projectileData.GetPower(), projectileData.bulletBehaviour);
+            Destroy(gameObject);
         }
     }
 
