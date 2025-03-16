@@ -12,6 +12,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     protected override void Start()
     {
         base.Start();
+        UIController.instance.UpdateLife((int)hp);
     }
 
     public override Vector3 GetDirection()
@@ -22,6 +23,7 @@ public class PlayerBehaviour : FightingEntityBehaviour
     protected override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        UIController.instance.UpdateLife((int) hp);
 
         if (!IsAlive()) return;
 
