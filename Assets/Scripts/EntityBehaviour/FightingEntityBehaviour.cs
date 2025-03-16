@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public abstract class FightingEntityBehaviour : MonoBehaviour
@@ -22,6 +24,9 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
     public bool hasTickEffect = false;
     public bool hasSlownessEffect = false;
     public bool isShooting = false;
+
+    public bool isAttacking = false;
+    public bool isUnvulnerable = false;
 
     public float tickDamageValue = 0f;
     public uint tickPenaltyTimeLeft = 0;
@@ -119,6 +124,40 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
         timeUntilNextTickDamage -= deltaTimeMS;
     }
 
+    public virtual void TriggerHit(FightingEntityBehaviour target)
+    {
+        StartCoroutine(AttackCoroutine());
+        target.Hit(power);
+    }
+
+    public Animator GetAnimator()
+    {
+        if(gameObject.CompareTag("Enemy"))
+        {
+            foreach (Transform t in transform)
+            {
+                if(t.gameObject.CompareTag("EnemyAnimation"))
+                {
+                    return t.gameObject.GetComponent<Animator>();
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public IEnumerator AttackCoroutine()
+    {
+        this.isAttacking = true;
+        Animator test = GetAnimator();
+        if (test != null)
+        {
+            test.Play(test.runtimeAnimatorController.animationClips.Last().name);
+        }
+        yield return new WaitForSeconds(3f);
+        this.isAttacking = false;
+    }
+
     public void TickDamage()
     {
         TakeDamage(tickDamageValue);
@@ -149,7 +188,11 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
 
     public void Hit(float damage, BulletBehaviour bulletData = null)
     {
-        if(bulletData == null || bulletData.StatusEffect == EnumList.StatusEffect.NORMAL)
+        Debug.Log(damage + " - " + isUnvulnerable);
+        if (isUnvulnerable) return;
+        Debug.Log(damage + " - " + isUnvulnerable);
+
+        if (bulletData == null || bulletData.StatusEffect == EnumList.StatusEffect.NORMAL)
         {
             TakeDamage(damage);
             return;
@@ -169,7 +212,6 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
 
     virtual protected void TakeDamage(float damage)
     {
-        Debug.Log("DAMAGE OMG");
         if (this.hp - damage <= 0)
             Die();
         else

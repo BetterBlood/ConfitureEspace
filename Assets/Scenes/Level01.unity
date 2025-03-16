@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 18091771}
   - component: {fileID: 18091772}
   - component: {fileID: 18091773}
+  - component: {fileID: 18091774}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -260,6 +261,8 @@ MonoBehaviour:
   hasTickEffect: 0
   hasSlownessEffect: 0
   isShooting: 0
+  isAttacking: 0
+  isUnvulnerable: 0
   tickDamageValue: 0
   tickPenaltyTimeLeft: 0
   timeBetweenTickDamages: 0
@@ -268,6 +271,27 @@ MonoBehaviour:
   speedMultiplier: 1
   shootTimer: 0
   direction: {fileID: 1804235462}
+--- !u!65 &18091774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18091766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.79, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &69818603
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -6, y: 61.4}
+  m_AnchoredPosition: {x: -5.999939, y: 61.400024}
   m_SizeDelta: {x: -117.19995, y: 78.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135158181
@@ -3297,6 +3321,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3718105788516867905, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
+      propertyPath: m_TagString
+      value: EnemyAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044162020022408247, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5288877293521286924, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
       propertyPath: m_Name
       value: EnemyContainerWolf
@@ -3309,6 +3341,10 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1865686892}
+    - target: {fileID: 6423303719010439617, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1067505830, guid: ecacf3512d2a74e19b809b82912e5165, type: 3}
     - target: {fileID: 7281137961794361119, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
       propertyPath: playerInput
       value: 
@@ -3317,6 +3353,10 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1865686892}
+    - target: {fileID: 9059349763896512199, guid: 9fe5767d00bed46be871e28aababe128, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 482963250cb314781b20616fe5d946ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3842,9 +3882,11 @@ MonoBehaviour:
   fireRate: 0
   power: 0
   canShoot: 0
-  hasTickEffect: 0
+  hasTickEffect: 1
   hasSlownessEffect: 0
   isShooting: 0
+  isAttacking: 0
+  isUnvulnerable: 0
   tickDamageValue: 0
   tickPenaltyTimeLeft: 0
   timeBetweenTickDamages: 0
@@ -3853,6 +3895,7 @@ MonoBehaviour:
   speedMultiplier: 1
   shootTimer: 0
   player: {fileID: 18091766}
+  expPrefab: {fileID: 2025797122199939551, guid: 289899b2dbd8629469abe197301835de, type: 3}
 --- !u!1 &1717989524
 GameObject:
   m_ObjectHideFlags: 0

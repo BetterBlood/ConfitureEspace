@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static Projectile;
 
 public class PlayerBehaviour : FightingEntityBehaviour
 {
@@ -30,9 +31,24 @@ public class PlayerBehaviour : FightingEntityBehaviour
 
     IEnumerator UnvulnerabilityCoroutine()
     {
-        this.gameObject.GetComponent<Collider>().enabled = false;
+        isUnvulnerable = true;
         //TODO Faire clignoter le sprite
         yield return new WaitForSeconds(fightingEntity.UnvulnerabilityDuration / 1000f);
-        this.gameObject.GetComponent<Collider>().enabled = false;
+        isUnvulnerable = false;
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        // GAME OVER
+    }
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        if (collider != null && collider.gameObject.CompareTag(fightingEntity.GetTarget()))
+        {
+            FightingEntityBehaviour feb = collider.gameObject.GetComponent<FightingEntityBehaviour>();
+            feb.TriggerHit(this);
+        }
     }
 }

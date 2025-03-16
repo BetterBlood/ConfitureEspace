@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static Projectile;
 
 public class EnemyBehaviour : FightingEntityBehaviour
 {
@@ -20,7 +21,10 @@ public class EnemyBehaviour : FightingEntityBehaviour
     protected override void Update()
     {
         base.Update();
-        transform.position += GetSpeed() * Time.deltaTime * GetDirection();
+        if (!isAttacking)
+        {
+            transform.position += GetSpeed() * Time.deltaTime * GetDirection();
+        }
     }
     public override Vector3 GetDirection()
     {
