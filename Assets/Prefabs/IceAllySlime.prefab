@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 793360866977303282}
   - component: {fileID: 335634870213356853}
   m_Layer: 0
-  m_Name: AllySlime
+  m_Name: IceAllySlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   fightingEntity: {fileID: 11400000, guid: 019bf6373bd32ca45abfa01fd8edb5c7, type: 2}
   bullet: {fileID: 11400000, guid: ab509276d77a46b46944a0d68db606aa, type: 2}
   bulletBehaviour: {fileID: 0}
-  projectile: {fileID: 7316956318293850088, guid: e414544efb5650442bb8d37746cc585c, type: 3}
+  projectile: {fileID: 7316956318293850088, guid: 5051099adad1e4348bc50bc18a7840a2, type: 3}
   hp: 0
   speed: 0
   fireRate: 0
