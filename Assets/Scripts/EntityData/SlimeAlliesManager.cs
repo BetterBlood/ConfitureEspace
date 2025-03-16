@@ -36,21 +36,21 @@ public class SlimeAlliesManager : MonoBehaviour
     void Update()
     {
         // TODO : remove timer things it's only debug test
-        timer += Time.deltaTime;
+        //timer += Time.deltaTime;
 
-        if (timer > 1)
-        {
-            timer = 0;
-            if (allies.Count > 7)
-            {
-                RemoveLastSlime();
-            }
-            else
-            {
-                if (allies.Count %2 == 0) AddSlime(allyFire);
-                else AddSlime(ally);
-            }
-        }
+        //if (timer > 1)
+        //{
+        //    timer = 0;
+        //    if (allies.Count > 7)
+        //    {
+        //        RemoveLastSlime();
+        //    }
+        //    else
+        //    {
+        //        if (allies.Count %2 == 0) AddSlime(allyFire);
+        //        else AddSlime(ally);
+        //    }
+        //}
 
     }
 
