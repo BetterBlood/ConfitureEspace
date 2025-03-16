@@ -26,8 +26,8 @@ public class CrossfadeUI : MonoBehaviour
         {
             if (index == 2)
             {
-                SceneManager.LoadScene("AbsoluteKino");
-                Debug.Log("switch scene");
+                SceneManager.LoadScene("Level01");
+                //Debug.Log("switch scene");
             }
             LeanTween.moveX(slides[index], targetOff, duration/2).setEase(LeanTweenType.linear);
             LeanTween.moveX(slides[index+1], targetOn, duration).setEase(LeanTweenType.linear);
