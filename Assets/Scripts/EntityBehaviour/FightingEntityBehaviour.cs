@@ -190,7 +190,7 @@ public abstract class FightingEntityBehaviour : MonoBehaviour
     {
         //Debug.Log(damage + " - " + isUnvulnerable);
         if (isUnvulnerable) return;
-        Debug.Log(damage + " - " + isUnvulnerable);
+        //Debug.Log(damage + " - " + isUnvulnerable);
 
         if (bulletData == null || bulletData.StatusEffect == EnumList.StatusEffect.NORMAL)
         {
