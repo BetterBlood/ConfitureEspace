@@ -124,6 +124,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7631640360152669969, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
   m_PrefabInstance: {fileID: 3856166298819450112}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &451354524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3904996382734747576, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
+  m_PrefabInstance: {fileID: 3856166298819450112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &479828627
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +892,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1960615529451153866, guid: 6021868a9a68759479b5904f1af05503, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960615529451153866, guid: 6021868a9a68759479b5904f1af05503, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 451354524}
     - target: {fileID: 7118394854711860352, guid: 6021868a9a68759479b5904f1af05503, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -943,6 +956,18 @@ PrefabInstance:
     - target: {fileID: 3904996382734747576, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
       propertyPath: m_Name
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219323910737633241, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.38490564
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219323910737633241, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219323910737633241, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.904767
       objectReference: {fileID: 0}
     - target: {fileID: 7219323910737633241, guid: 7ef7788ecbfed0d4b99cc146160335fa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

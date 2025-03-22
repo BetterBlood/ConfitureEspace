@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        // EventSystems.current.SetSelectedGameObject(null);
+        //EventSystems.current.SetSelectedGameObject(button_resume);
         Time.timeScale = 1.0f;
         GameisPaused = false;
     }
